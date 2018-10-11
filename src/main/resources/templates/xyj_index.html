@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+        <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/css/default.css}" rel="stylesheet"/>
+        <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon"/>
+        <meta charset="UTF-8"/>
+        <title>西游记</title>
+    </head>
+
+    <body>
+
+        <div class="contentDiv">
+
+            <h5> <a th:href="@{/classes/list}" th:text="管理门派"></a></h5>
+            <h5> <a th:href="@{/suit/list}" th:text="管理套装"></a></h5>
+
+        </div>
+
+    </body>
+</html>

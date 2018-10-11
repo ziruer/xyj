@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+        <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/css/default.css}" rel="stylesheet"/>
+        <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon"/>
+        <meta charset="UTF-8"/>
+        <title>门派列表</title>
+    </head>
+
+    <body>
+
+        <div class="contentDiv">
+
+            <table class="table table-hover table-condensed">
+                <legend>
+                    <strong>门派列表</strong>
+                </legend>
+                <thead>
+                    <tr>
+
+                        <th>门派名称</th>
+                        <th>门派描述</th>
+                        <th>套装</th>
+                        <!--<th>管理</th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="xyjClass : ${classList}">
+                        <!--<th scope="row" th:text="${xyjClass.id}"></th>-->
+                        <td><a th:href="@{/classes/update/{userId}(userId=${xyjClass.id})}" th:text="${xyjClass.name}"></a></td>
+                        <td width="700" th:text="${xyjClass.des}"></td>
+                        <td><a th:href="@{/suit/update/{userId}(userId=${xyjClass.suitid})}" th:text="${xyjClass.suitName}"></a></td>
+                        <!--<td><a class="btn btn-danger" th:href="@{/classes/delete/{userId}(userId=${xyjClass.id})}">删除</a></td>-->
+                    </tr>
+                </tbody>
+            </table>
+
+            <div><a class="btn btn-primary" href="/classes/create" role="button">创建门派</a></div>
+        </div>
+
+    </body>
+</html>
